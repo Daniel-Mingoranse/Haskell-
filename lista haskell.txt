@@ -1,0 +1,38 @@
+-- 4.1) Faça uma função que retorne a média de um [Double] ,
+-- usando foldl .
+
+media :: [Double] -> Double
+media (x:xs) = 
+
+
+
+
+-- 4.2) Faça uma função que receba uma [String] e retorne
+-- todos os elementos palíndromos. Ver exercício 3.7.
+ehPalindromo :: String -> Bool
+ehPalindromo str = str == reverse str
+
+palindromos :: [String] -> [String]
+palindromos lista = filter ehPalindromo lista
+
+
+
+-- 4.3) Implemente uma função que filtre os números pares e
+-- outra que filtre os ímpares de uma lista recebida via parâmetro.
+numerosPares :: [Int] -> [Int]
+numerosPares lista = filter even lista
+
+numerosImpares :: [Int] -> [Int]
+numerosImpares lista = filter odd lista
+
+
+
+-- 4.5) Implemente uma função que receba uma lista de inteiros e
+-- retorne o dobro de todos, eliminando os múltiplos de 4.
+dobroSemMultiplosDe4 :: [Int] -> [Int]
+dobroSemMultiplosDe4 lista = map (\x -> 2*x) (filter (\x -> x `mod` 4 /= 0) lista)
+
+-- 4.6) Faça uma função func que receba uma função f de tipo
+-- (String -> String) , e uma String s que retorna o reverso
+func :: (String -> String) -> String -> String
+func f s = f (reverse s)
